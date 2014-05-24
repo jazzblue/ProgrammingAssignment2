@@ -49,12 +49,12 @@ cacheSolve <- function(x, ...) {
     # If the cache is not empty, return value from the cache
     if(!is.null(x_inv)) {
         message("getting cached data")
-                return(x_inv)
+            return(x_inv)
     }
     
-        # Otherwise (if cache is empty)
-        data <- x$get()   # Get matrix value
-        x_inv <- solve(data, ...)   # Compute inverse matrix value
-        x$set_inv(x_inv)   # Set cache to inverse matrix value
-        x_inv    # Return computed inverse matrix value
+    # Otherwise (if cache is empty)
+    data <- x$get()   # Get matrix value
+    x_inv <- solve(data, ...)   # Compute inverse matrix value
+    x$set_inv(x_inv)   # Set cache to inverse matrix value
+    x_inv    # Return computed inverse matrix value
 }
